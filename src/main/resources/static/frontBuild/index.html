@@ -1,0 +1,269 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta name="data-spm" content="a26eq"><title>“同心博爱”百姓救助项目</title><meta http-equiv="x-dns-prefetch-control" content="on"><meta name="format-detection" content="telephone=no"><script src="frontBuild/react.dll.js"></script><style>html {min-height: 100%;}
+      body {
+        margin: 0;
+        font-family: 'PingFang SC', Tahoma,Arial,"Microsoft YaHei",sans-serif;
+        min-height: 100%;
+        display: -webkit-flex;
+        display: flex;
+        flex: 1;
+      }
+      a {
+        text-decoration: none !important;
+      }
+      * {-webkit-box-sizing: border-box; box-sizing: border-box; -webkit-tap-highlight-color: transparent;}
+      .lineLength2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+      }
+      .slider-slide, .slider-list {
+        height: 5rem !important;
+      }
+      .am-list-item {
+        padding-left: 0.1rem !important;
+        height: 1rem !important;
+        flex: 1;
+        background-color: transparent !important;
+      }
+      .am-textarea-control textarea {
+        font-size: 0.28rem !important;
+        line-height: 0.36rem !important;
+      }
+      .am-modal-transparent {
+        width: 9.8rem !important;
+      }
+      .am-modal-title {
+        font-size: 0.8rem !important;
+        line-height: 1rem !important;
+      }
+      .am-modal-body {
+        font-size: 0.5rem !important;
+        line-height: 0.6rem !important;
+      }
+      .am-modal-button-group-v .am-modal-button {
+        font-size: 0.6rem !important;
+        height: 1rem !important;
+        line-height: 1rem !important;
+      }
+      .am-modal-transparent .am-modal-content .am-modal-body {
+        padding: 0.4rem !important;
+      }
+      .pickerBox>div{
+        flex: 1
+      }
+      .am-list-item .am-list-line .am-list-content, .am-list-item .am-list-line .am-list-extra {
+        font-size: 0.36rem !important;
+        line-height: 0.45rem !important;
+        max-width: 6rem;
+        flex: 1;
+        text-align: left !important;
+      }
+      .am-list-item .am-list-line .am-list-arrow {
+        width: 0.4rem !important;
+        height: 0.4rem !important;
+        margin-left: 0.2rem !important;
+      }
+      .am-picker-popup-item {
+        font-size: 0.45rem !important;
+        padding: 0.2rem 0.4rem !important;
+        height: 0.85rem !important;
+      }
+      .am-picker-col {
+        height: 3.4rem !important;
+      }
+      .am-picker-col-item-selected {
+        font-size: 0.36rem !important;
+      }
+      .am-picker-col-item {
+        font-size: 0.36rem !important;
+        height: 0.8rem !important;
+        line-height: 0.8rem !important;
+      }
+      .am-picker-col-item {
+        font-size: 0.36rem !important;
+        height: 0.8rem !important;
+        line-height: 0.8rem !important;
+      }
+      .am-picker-col-indicator {
+        height: 0.8rem !important;
+        top: 102px;
+        border: none !important;
+      }
+      .am-picker-col-indicator::before {
+        background-color: #333 !important;
+      }
+      .am-picker-col-indicator::after {
+        background-color: #333 !important;
+      }
+      .am-list-item .am-input-control input, .am-list-item .am-input-control .fake-input-container .fake-input,
+      .am-list-item .am-input-control, .am-list-item .am-input-control .fake-input-container {
+        font-size: 0.36rem !important;
+        line-height: 0.8rem !important;
+      }
+      .am-list-item .am-input-clear {
+        width: 0.6rem !important;
+        height: 0.6rem !important;
+        background-size: 0.6rem auto !important;
+        background-position: 0.06rem 0.06rem !important;
+      }
+      .am-number-keyboard-wrapper.am-number-keyboard-wrapper-hide {
+        bottom: -7rem !important;
+      }
+      .am-number-keyboard-wrapper {
+        height: 6rem !important;
+      }
+      .am-number-keyboard-wrapper table tr .am-number-keyboard-item {
+        height: 1.5rem !important;
+        font-size: 0.5rem !important;
+      }
+      .am-number-keyboard-wrapper table tr .am-number-keyboard-item.keyboard-hide {
+        background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221%22%20xmlns%3D%22ht…%201.5-1.5c0-1.3-2.5-1.5-16.5-1.5s-16.5.2-16.5%201.5z%22%2F%3E%3C%2Fsvg%3E);
+        background-size: .4rem .4rem !important;
+      }
+      .am-number-keyboard-wrapper table tr .am-number-keyboard-item.keyboard-delete {
+        background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221%22%20xmlns%3D%22ht…051l-11-11c-6-6-11.2-11-11.6-11-.3%200-1.4.9-2.4%202z%22%2F%3E%3C%2Fsvg%3E);
+        background-size: .5rem .37rem !important;
+        background-position: 50% 50% !important;
+        background-repeat: no-repeat !important;
+      }
+      .am-list-item .am-input-control .fake-input-container .fake-input-placeholder {
+        text-align: left !important;
+      }
+      @media screen and (min-width: 900px) {
+        .am-number-keyboard-wrapper {
+          height: 400px !important;
+        }
+        .am-number-keyboard-wrapper table tr .am-number-keyboard-item {
+          height: 100px !important;
+          font-size: 40px !important;
+        }
+        .am-list-item .am-list-line .am-list-content, .am-list-item .am-list-line .am-list-extra {
+          font-size: 12px !important;
+          line-height: 40px !important;
+          /* max-width: 60rem; */
+          flex: 1;
+          text-align: left !important;
+        }
+        
+        .am-list-item .am-input-control, .am-list-item .am-input-control .fake-input-container {
+          font-size: 12px !important;
+          line-height: 40px !important;
+        }
+        .am-list-item .am-input-control .fake-input-container {
+          height: 40px !important;
+        }
+        .am-list-item {
+          padding-left: 5px !important;
+          height: 50px !important;
+          flex: 1;
+          background-color: transparent !important;
+        }
+        .am-list-item .am-input-control input, .am-list-item .am-input-control .fake-input-container .fake-input, .am-list-item .am-input-control, .am-list-item .am-input-control .fake-input-container {
+          font-size: 12px !important;
+          line-height: 40px !important;
+          text-align: left !important;
+        }
+        .am-list-item .am-input-clear {
+          width: 20px !important;
+          height: 20px !important;
+          background-size: 10px auto !important;
+          background-position: 5px 5px !important;
+        }
+        .am-flexbox .am-flexbox-item {
+          -ms-flex: 1;
+          flex: none !important;
+          width: 90px !important;
+          height: 90px !important;
+          margin-left: 8px;
+          min-width: 10px;
+        }
+        .am-image-picker-list {
+          padding: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        .am-image-picker-list .am-flexbox {
+          margin-bottom: 0 !important;
+        }
+        .am-image-picker-list .am-image-picker-upload-btn:before, .am-image-picker-list .am-image-picker-upload-btn:after
+        {
+          width: 2px !important;
+          height: 40px !important;
+        }
+        /* PC */
+        .am-image-picker-list .am-image-picker-item {
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          width: 80px !important;
+          height: 80px !important;
+        }
+        .am-image-picker-list .am-image-picker-upload-btn:after {
+          width: 40px !important;
+          height: 2px !important;
+        }
+        .am-image-picker-list .am-image-picker-item .am-image-picker-item-remove {
+          width: 40px !important;
+          height: 40px !important;
+          right: 5px !important;
+          top: 5px !important;
+          background-size: 40px auto !important;
+        }
+        .am-image-picker-list .am-image-picker-upload-btn {
+          border: 2px solid #ddd !important;
+        }
+        .am-flexbox .am-flexbox-item {
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          -ms-flex: 1;
+          flex: 1 1;
+          margin-left: 8px;
+          min-width: 10px;
+        }
+      }</style><script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script><script>if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body);
+        }, false);
+      }
+
+      window.setCookie = function (name, value,days) {
+          var Days = days||365;
+          var minutes = 60;
+          var hour=24;
+          var seconds=60;
+          var exp = new Date();
+          var timeStr='';
+          if(Days!=='browserClose'){
+              exp.setTime(exp.getTime() + Days * hour * minutes * seconds * 1000);
+              timeStr=";expires=" + exp.toGMTString();
+          }
+          document.cookie = name + "=" + encodeURI(value) + timeStr + "; path=/";
+      };
+      window.getCookie = function (name) {
+          //"(^| )"+ name + "=([^;]*)(;|$)")==>开始或者任意开头+name+非‘;’+‘;’或结束
+          var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+
+          if (arr = document.cookie.match(reg))
+              return decodeURI(arr[2]);
+          else
+              return null;
+      };
+      window.delCookie = function (name) {
+          var exp = new Date();
+          exp.setTime(exp.getTime() - 1);
+          var cval = yuJS.getCookie(name);
+          if (cval != null){
+              document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString() + "; path=/";
+          }
+      };
+
+      if(!window.Promise) {
+        document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+      }</script></head><body><script>var dom=document;
+      var UIWidth=1080;
+      var unitMatrix=100;
+      let actualPx =  dom.body.offsetWidth*unitMatrix / UIWidth;
+      dom.documentElement.style.fontSize = actualPx + "px";</script><div id="root" style="width: 100%"></div><script type="text/javascript" src="frontBuild/main.js"></script></body></html>

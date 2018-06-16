@@ -1,0 +1,151 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta name="data-spm" content="a26eq"><title>“同心博爱”百姓救助项目</title><meta http-equiv="x-dns-prefetch-control" content="on"><meta name="format-detection" content="telephone=no"><script src="endBuild/xlsx.dll.js"></script><script src="endBuild/react.dll.js"></script><style>html {min-height: 100%;}
+      body {
+        margin: 0;
+        font-family: 'PingFang SC', Tahoma,Arial,"Microsoft YaHei",sans-serif;
+        min-height: 100%;
+        display: -webkit-flex;
+        display: flex;
+        flex: 1;
+      }
+      a {
+        text-decoration: none !important;
+      }
+      * {-webkit-box-sizing: border-box; box-sizing: border-box; -webkit-tap-highlight-color: transparent;}
+      .am-number-keyboard-wrapper {
+          height: 400px !important;
+        }
+        .am-number-keyboard-wrapper table tr .am-number-keyboard-item {
+          height: 100px !important;
+          font-size: 40px !important;
+        }
+        .am-list-item .am-list-line .am-list-content, .am-list-item .am-list-line .am-list-extra {
+          font-size: 12px !important;
+          line-height: 40px !important;
+          flex: 1;
+          text-align: left !important;
+        }
+        
+        .am-list-item .am-input-control, .am-list-item .am-input-control .fake-input-container {
+          font-size: 12px !important;
+          line-height: 40px !important;
+        }
+        .am-list-item .am-input-control .fake-input-container {
+          height: 40px !important;
+        }
+        .am-list-item {
+          padding-left: 5px !important;
+          min-height: 40px !important;
+          /* height: 40px !important; */
+          flex: 1;
+          background-color: transparent !important;
+        }
+        .am-textarea-control textarea {
+          font-size: 12px !important;
+          line-height: 20px !important;
+        }
+        .am-list-item .am-input-control input, .am-list-item .am-input-control .fake-input-container .fake-input, .am-list-item .am-input-control, .am-list-item .am-input-control .fake-input-container {
+          font-size: 12px !important;
+          line-height: 40px !important;
+          text-align: left !important;
+        }
+        .am-list-item .am-input-clear {
+          width: 20px !important;
+          height: 20px !important;
+          background-size: 10px auto !important;
+          background-position: 5px 5px !important;
+        }
+        .am-flexbox .am-flexbox-item {
+          -ms-flex: 1;
+          flex: none !important;
+          width: 90px !important;
+          height: 90px !important;
+          margin-left: 8px;
+          min-width: 10px;
+        }
+        .am-image-picker-list {
+          padding: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        .am-image-picker-list .am-flexbox {
+          margin-bottom: 0 !important;
+        }
+        .am-image-picker-list .am-image-picker-upload-btn:before, .am-image-picker-list .am-image-picker-upload-btn:after
+        {
+          width: 2px !important;
+          height: 40px !important;
+        }
+        /* PC */
+        .am-image-picker-list .am-image-picker-item {
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          width: 80px !important;
+          height: 80px !important;
+        }
+        .am-image-picker-list .am-image-picker-upload-btn:after {
+          width: 40px !important;
+          height: 2px !important;
+        }
+        .am-image-picker-list .am-image-picker-item .am-image-picker-item-remove {
+          width: 40px !important;
+          height: 40px !important;
+          right: 5px !important;
+          top: 5px !important;
+          background-size: 40px auto !important;
+        }
+        .am-image-picker-list .am-image-picker-upload-btn {
+          border: 2px solid #ddd !important;
+        }
+        .am-flexbox .am-flexbox-item {
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          -ms-flex: 1;
+          flex: 1 1;
+          margin-left: 8px;
+          min-width: 10px;
+        }</style><script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script><script>if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body);
+        }, false);
+      }
+
+      window.setCookie = function (name, value,days) {
+          var Days = days||365;
+          var minutes = 60;
+          var hour=24;
+          var seconds=60;
+          var exp = new Date();
+          var timeStr='';
+          if(Days!=='browserClose'){
+              exp.setTime(exp.getTime() + Days * hour * minutes * seconds * 1000);
+              timeStr=";expires=" + exp.toGMTString();
+          }
+          document.cookie = name + "=" + encodeURI(value) + timeStr + "; path=/";
+      };
+      window.getCookie = function (name) {
+          //"(^| )"+ name + "=([^;]*)(;|$)")==>开始或者任意开头+name+非‘;’+‘;’或结束
+          var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+
+          if (arr = document.cookie.match(reg))
+              return decodeURI(arr[2]);
+          else
+              return null;
+      };
+      window.delCookie = function (name) {
+          var exp = new Date();
+          exp.setTime(exp.getTime() - 1);
+          var cval = yuJS.getCookie(name);
+          if (cval != null){
+              document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString() + "; path=/";
+          }
+      };
+
+      if(!window.Promise) {
+        document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+      }</script></head><body><script>var dom=document;
+      var UIWidth=1080;
+      var unitMatrix=100;
+      let actualPx =  dom.body.offsetWidth*unitMatrix / UIWidth;
+      dom.documentElement.style.fontSize = actualPx + "px";</script><div id="root" style="width: 100%"></div><a href="" download="捐助人信息.xlsx" id="hf"></a><script type="text/javascript" src="endBuild/main.js"></script></body></html>

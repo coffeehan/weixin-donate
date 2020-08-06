@@ -13,6 +13,8 @@ public interface DonateOrderService {
 
     List<DonateOrderDO> getDonateOrderList(int start, int end);
 
+    List<DonateOrderDO> getDonateOrderAll();
+
     /**
      * 根据姓名+手机号后四位查询订单信息
      * @return

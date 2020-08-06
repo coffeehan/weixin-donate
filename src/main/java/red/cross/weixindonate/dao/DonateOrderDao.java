@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Update;
 import red.cross.weixindonate.domain.AppealRecordDO;
 import red.cross.weixindonate.domain.DonateOrderDO;
 import org.apache.ibatis.annotations.Insert;
+import red.cross.weixindonate.domain.PageDO;
 import red.cross.weixindonate.entity.OrderQueryCondition;
 
 import java.util.List;
@@ -48,6 +49,9 @@ public interface DonateOrderDao {
     @Select(" select count(money) from DONATE_ORDER where IS_PAY_SUCCESS=1;")
     Integer getTotalDonator();
 
-    @Select("select * from DONATE_ORDER where IS_PAY_SUCCESS=1 limit #{0},#{1}")
-    List<DonateOrderDO> getDonateOrderList(int index, int size);
+    @Select("select * from DONATE_ORDER where IS_PAY_SUCCESS=1 limit #{index},#{size}")
+    List<DonateOrderDO> getDonateOrderList(PageDO pageDO);
+
+    @Select("select * from DONATE_ORDER where IS_PAY_SUCCESS=1")
+    List<DonateOrderDO> getDonateOrderAll();
 }

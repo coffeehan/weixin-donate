@@ -20,7 +20,7 @@ public class AppealRecordController {
     @Autowired
     AppealRecordService appealRecordService;
 
-    String IMAGE_PATH="/usr/local/weixin-donate/images/";
+    String IMAGE_PATH="/svelldata/website/pthh.svell.cn/app/images/";
 
     @Autowired
     BannerImageService bannerImageService;
@@ -77,7 +77,8 @@ public class AppealRecordController {
     public WeiXinDonateResponse<List<AppealRecordDO>> getDrftAppealList(String index, String size) {
         WeiXinDonateResponse<List<AppealRecordDO>> response = new WeiXinDonateResponse<List<AppealRecordDO>>();
         try {
-            response.setData(appealRecordService.getDraftAppealList(Integer.valueOf(index), Integer.valueOf(size)));
+            //response.setData(appealRecordService.getDraftAppealList(Integer.valueOf(index), Integer.valueOf(size)));
+            response.setData(appealRecordService.getDraftAppealAll());
         } catch (Exception e) {
             response.setErrorMsg(ResultCodeMsgEnum.SQL_ERROR);
             System.out.println(new Date()+"#getDrftAppealList#error#"+e.getMessage());
@@ -91,7 +92,7 @@ public class AppealRecordController {
         WeiXinDonateResponse<Void> response = new WeiXinDonateResponse<Void>();
         appealRecordDO.setGmtModify(new Date());
         try {
-            if(appealRecordDO.getImageUrl()!=null&&!appealRecordDO.getImageUrl().contains("http://47.92.75.66/")){
+            if(appealRecordDO.getImageUrl()!=null&&!appealRecordDO.getImageUrl().contains("https://pthh.svell.net/")){
                 appealRecordDO.setImageUrl(getImageUrl(appealRecordDO.getImageUrl()));
             }
             if (appealRecordDO.getId() != null) {
@@ -120,7 +121,7 @@ public class AppealRecordController {
         appealRecordDO.setGmtModify(new Date());
         appealRecordDO.setStatus(1);
         try {
-            if(appealRecordDO.getImageUrl()!=null&&!appealRecordDO.getImageUrl().contains("http://47.92.75.66/")){
+            if(appealRecordDO.getImageUrl()!=null&&!appealRecordDO.getImageUrl().contains("https://pthh.svell.net/")){
                 appealRecordDO.setImageUrl(getImageUrl(appealRecordDO.getImageUrl()));
             }
             if (appealRecordDO.getId() != null) {
@@ -168,7 +169,7 @@ public class AppealRecordController {
         try {
             bannerImageService.saveImage(imageData,imagePath);
             System.out.println(new Date()+"#insertBannerImage#imagePath="+imagePath);
-            return "http://47.92.75.66/"+imageName;
+            return "https://pthh.svell.net/"+imageName;
         } catch (IOException e) {
             throw new Exception("图片保存失败");
         }

@@ -41,7 +41,8 @@ public class CommonController {
         InitInformation information=new InitInformation();
         try {
             information.setUrlList(bannerImageService.getBannerImages());
-            information.setAppealRecordList(appealRecordService.getDeployAppealList(0, 10000));
+            //information.setAppealRecordList(appealRecordService.getDeployAppealList(0, 10000));
+            information.setAppealRecordList(appealRecordService.getDeployAppealAll());
         }catch (Exception e){
             response.setErrorMsg(ResultCodeMsgEnum.SQL_ERROR);
             System.out.println(new Date()+"#getInitInformation#error#"+e);

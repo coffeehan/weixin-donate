@@ -12,7 +12,11 @@ public interface AppealRecordService {
 
     List<AppealRecordDO> getDeployAppealList(int start, int end);
 
+    List<AppealRecordDO> getDeployAppealAll();
+
     List<AppealRecordDO> getDraftAppealList(int index, int size);
+
+    List<AppealRecordDO> getDraftAppealAll();
 
     Integer saveAppealDrafInfo(AppealRecordDO appealRecordDO);
 

@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import red.cross.weixindonate.dao.AppealRecordDao;
 import red.cross.weixindonate.domain.AppealRecordDO;
+import red.cross.weixindonate.domain.PageDO;
+import red.cross.weixindonate.domain.SortDO;
 import red.cross.weixindonate.service.AppealRecordService;
 
 import java.util.List;
@@ -25,12 +27,28 @@ public class AppealRecordServiceImpl implements AppealRecordService {
 
     @Override
     public List<AppealRecordDO> getDeployAppealList(int index, int size) {
-        return appealRecordDao.getDeployAppealList(index, size);
+        PageDO pageDO = new PageDO();
+        pageDO.setIndex(index);
+        pageDO.setSize(size);
+        return appealRecordDao.getDeployAppealList(pageDO);
+    }
+
+    @Override
+    public List<AppealRecordDO> getDeployAppealAll() {
+        return appealRecordDao.getDeployAppealAll();
     }
 
     @Override
     public List<AppealRecordDO> getDraftAppealList(int index, int size) {
-        return appealRecordDao.getDraftAppealList(index, size);
+        PageDO pageDO = new PageDO();
+        pageDO.setIndex(index);
+        pageDO.setSize(size);
+        return appealRecordDao.getDraftAppealList(pageDO);
+    }
+
+    @Override
+    public List<AppealRecordDO> getDraftAppealAll() {
+        return appealRecordDao.getDraftAppealAll();
     }
 
     @Override
@@ -80,12 +98,18 @@ public class AppealRecordServiceImpl implements AppealRecordService {
 
     @Override
     public Integer setAppealRecordTop(Long id, Long sortValue) {
-        return appealRecordDao.setAppealDeployRecordTop(id,sortValue)*appealRecordDao.setAppealDraftRecordTop(id,sortValue);
+        SortDO sortDO = new SortDO();
+        sortDO.setId(id);
+        sortDO.setSortValue(sortValue);
+        return appealRecordDao.setAppealDeployRecordTop(sortDO) * appealRecordDao.setAppealDraftRecordTop(sortDO);
     }
 
     @Override
     public Integer unsetAppealRecordTop(Long id) {
-        return appealRecordDao.unsetAppealDeployRecordTop(id,(long)(10000000000000L-id))*appealRecordDao.unsetAppealDraftRecordTop(id,(long)(10000000000000L-id));
+        SortDO sortDO = new SortDO();
+        sortDO.setId(id);
+        sortDO.setSortValue((long) (10000000000000L - id));
+        return appealRecordDao.unsetAppealDeployRecordTop(sortDO) * appealRecordDao.unsetAppealDraftRecordTop(sortDO);
     }
 
 }

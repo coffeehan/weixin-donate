@@ -3,6 +3,7 @@ package red.cross.weixindonate.service.impl;
 import org.springframework.stereotype.Service;
 import red.cross.weixindonate.dao.DonateOrderDao;
 import red.cross.weixindonate.domain.DonateOrderDO;
+import red.cross.weixindonate.domain.PageDO;
 import red.cross.weixindonate.entity.OrderQueryCondition;
 import red.cross.weixindonate.entity.TotalStatisticsResult;
 import red.cross.weixindonate.service.DonateOrderService;
@@ -52,6 +53,14 @@ public class DonateOrderServiceImpl implements DonateOrderService {
 
     @Override
     public List<DonateOrderDO> getDonateOrderList(int index, int size) {
-        return donateOrderDao.getDonateOrderList(index,size);
+        PageDO pageDO = new PageDO();
+        pageDO.setIndex(index);
+        pageDO.setSize(size);
+        return donateOrderDao.getDonateOrderList(pageDO);
+    }
+
+    @Override
+    public List<DonateOrderDO> getDonateOrderAll() {
+        return donateOrderDao.getDonateOrderAll();
     }
 }

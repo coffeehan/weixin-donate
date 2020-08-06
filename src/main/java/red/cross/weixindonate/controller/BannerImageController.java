@@ -19,7 +19,7 @@ public class BannerImageController {
     @Autowired
     BannerImageService bannerImageService;
 
-    String IMAGE_PATH="/usr/local/weixin-donate/images/";
+    String IMAGE_PATH="/svelldata/website/pthh.svell.cn/app/images/";
 
     @RequestMapping(path = "/insertBannerImage")
     public WeiXinDonateResponse<String> insertBannerImage(@RequestBody BannerImageDO bannerImageDO,HttpServletRequest request) {
@@ -34,7 +34,7 @@ public class BannerImageController {
             try {
                 bannerImageService.saveImage(bannerImageDO.getImageData(),imagePath);
                 System.out.println(new Date()+"#insertBannerImage#imagePath="+imagePath);
-                bannerImageDO.setImageUrl("http://47.92.75.66/"+imageName);
+                bannerImageDO.setImageUrl("https://pthh.svell.net/"+imageName);
                 response.setData(imagePath);
             } catch (IOException e) {
                 System.out.println(new Date()+"#insertBannerImage#error#"+e);

@@ -13,7 +13,7 @@ public class WeiXinPayConstants {
 
     public static String trade_type="JSAPI";
 
-    public static String notify_url="http://pthh.svell.cn/notify";
+    public static String notify_url="https://pthh.svell.net/notify";
 
     public static String key="shanghaiputuoquhongshizihui16113";
 

@@ -15,7 +15,7 @@ public class BannerImageServiceImpl implements BannerImageService {
     @Autowired
     BannerImageDao bannerImageDao;
 
-    String localImagePath="/usr/local/weixin-donate/images";
+    String localImagePath="/svelldata/website/pthh.svell.cn/app/images";
 
     @Override
     public List<String> getBannerImages() {

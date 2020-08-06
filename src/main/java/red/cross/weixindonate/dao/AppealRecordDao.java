@@ -5,18 +5,26 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import red.cross.weixindonate.domain.AppealRecordDO;
+import red.cross.weixindonate.domain.PageDO;
+import red.cross.weixindonate.domain.SortDO;
 
 import java.util.List;
 
 public interface AppealRecordDao {
-    @Select("select * from APPEAL_DEPLOY_RECORD order by sort_value desc limit #{0},#{1}")
-    List<AppealRecordDO> getDeployAppealList(int index, int size);
+    @Select("select * from APPEAL_DEPLOY_RECORD order by sort_value desc limit #{index},#{size}")
+    List<AppealRecordDO> getDeployAppealList(PageDO pageDO);
+
+    @Select("select * from APPEAL_DEPLOY_RECORD order by sort_value desc")
+    List<AppealRecordDO> getDeployAppealAll();
 
     @Select("select * from APPEAL_DEPLOY_RECORD where id=#{id}")
     AppealRecordDO getDeployAppealById(long id);
 
-    @Select("select * from APPEAL_RECORD order by sort_value desc limit #{0},#{1}")
-    List<AppealRecordDO> getDraftAppealList(int index, int size);
+    @Select("select * from APPEAL_RECORD order by sort_value desc limit #{index},#{size}")
+    List<AppealRecordDO> getDraftAppealList(PageDO pageDO);
+
+    @Select("select * from APPEAL_RECORD order by sort_value desc")
+    List<AppealRecordDO> getDraftAppealAll();
 
     @Select("select * from APPEAL_RECORD where id=#{id}")
     AppealRecordDO getDraftAppealById(long id);
@@ -90,15 +98,15 @@ public interface AppealRecordDao {
             "where id=#{id}")
     Integer updateAppealDeployInfo(AppealRecordDO appealRecordDO);
 
-    @Update("update APPEAL_DEPLOY_RECORD set sort_value=#{1},is_top=1 where id=#{0}")
-    Integer setAppealDeployRecordTop(Long id,long sortValue );
+    @Update("update APPEAL_DEPLOY_RECORD set sort_value=#{sortValue},is_top=1 where id=#{id}")
+    Integer setAppealDeployRecordTop(SortDO sortDO);
 
-    @Update("update APPEAL_RECORD set sort_value=#{1} ,is_top=1 where id=#{0}")
-    Integer setAppealDraftRecordTop(Long id,long sortValue );
+    @Update("update APPEAL_RECORD set sort_value=#{sortValue} ,is_top=1 where id=#{id}")
+    Integer setAppealDraftRecordTop(SortDO sortDO);
 
-    @Update("update APPEAL_DEPLOY_RECORD set sort_value=#{1} ,is_top=0 where id=#{0}")
-    Integer unsetAppealDeployRecordTop(Long id,long sortValue );
+    @Update("update APPEAL_DEPLOY_RECORD set sort_value=#{sortValue} ,is_top=0 where id=#{id}")
+    Integer unsetAppealDeployRecordTop(SortDO sortDO);
 
-    @Update("update APPEAL_RECORD set sort_value=#{1} ,is_top=0 where id=#{0}")
-    Integer unsetAppealDraftRecordTop(Long id,long sortValue);
+    @Update("update APPEAL_RECORD set sort_value=#{sortValue} ,is_top=0 where id=#{id}")
+    Integer unsetAppealDraftRecordTop(SortDO sortDO);
 }

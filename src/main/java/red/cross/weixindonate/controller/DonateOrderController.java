@@ -55,7 +55,8 @@ public class DonateOrderController {
     public WeiXinDonateResponse<List<DonateOrderDO>> getDonateOrderList(String index, String size){
         WeiXinDonateResponse<List<DonateOrderDO>> response=new WeiXinDonateResponse<List<DonateOrderDO>>();
         try {
-            response.setData(donateOrderService.getDonateOrderList(Integer.valueOf(index), Integer.valueOf(size)));
+            //response.setData(donateOrderService.getDonateOrderList(Integer.valueOf(index), Integer.valueOf(size)));
+            response.setData(donateOrderService.getDonateOrderAll());
         } catch (Exception e) {
             response.setErrorMsg(ResultCodeMsgEnum.SQL_ERROR);
             System.out.println(new Date()+"#getDonateOrderList#error#"+e);
